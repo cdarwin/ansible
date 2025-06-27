@@ -1,0 +1,10 @@
+- name: Test Ping
+  hosts: mini
+  become: yes
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Pong!
