@@ -1,0 +1,14 @@
+services:
+  znc:
+    image: lscr.io/linuxserver/znc:latest
+    container_name: znc
+    environment:
+      - PUID=501
+      - PGID=20
+      - UMASK=002
+      - TZ=America/Los_Angeles
+    volumes:
+      - /Users/crd/workspace/containers/irc/config:/config
+    ports:
+      - 6501:6501
+    restart: unless-stopped
