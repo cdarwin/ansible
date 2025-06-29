@@ -2,8 +2,9 @@
   hosts: mini
   tasks:
     - name: Copy znc compose file
-      community.docker.docker_compose_v2::
+      community.docker.docker_compose_v2:
         project_src: znc
+        docker_cli: /usr/local/bin/docker
       register: output
  
     - name: Show results
