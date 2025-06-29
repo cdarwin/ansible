@@ -1,5 +1,5 @@
 - name: Manage znc
-  host: mini
+  hosts: mini
   tasks:
     - name: Create a directory if it does not exist
       ansible.builtin.file:
