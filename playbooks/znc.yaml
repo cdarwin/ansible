@@ -1,9 +1,12 @@
-- name: Create a directory if it does not exist
-  ansible.builtin.file:
-    path: /Users/crd/workspace/containers/irc
-    state: directory
+- name: Manage znc
+  host: mini
+  tasks:
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /Users/crd/workspace/containers/irc
+        state: directory
 
-- name: Copy znc compose file
-  ansible.builtin.copy:
-    src: compose/znc.yaml
-    dest: /Users/crd/workspace/containers/irc/compose.yaml
+    - name: Copy znc compose file
+      ansible.builtin.copy:
+        src: compose/znc.yaml
+        dest: /Users/crd/workspace/containers/irc/compose.yaml
