@@ -1,12 +1,17 @@
 - name: Manage znc
   hosts: mini
   tasks:
-    - name: Copy znc compose file
+    - name: Ensure znc compose file
+      ansible.builtin.copy:
+        src: znc/compose.yml
+        dest: /Users/crd/workspace/containers/irc/compose.yml
+
+    - name: Ensure znc service with compose
       community.docker.docker_compose_v2:
-        project_src: znc
+        project_src: /Users/crd/workspace/containers/irc
         docker_cli: /usr/local/bin/docker
       register: output
  
-    - name: Show results
+    - name: Show znc compose results
       ansible.builtin.debug:
         var: output
