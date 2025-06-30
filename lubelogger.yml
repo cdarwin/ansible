@@ -1,0 +1,5 @@
+---
+- name: Configure and deploy the lubelogger application
+  hosts: homelab
+  roles:
+    - lubelogger

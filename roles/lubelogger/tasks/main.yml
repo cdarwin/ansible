@@ -1,0 +1,11 @@
+---
+- name: Ensure lubelogger compose file
+  ansible.builtin.copy:
+    src: compose.yml
+    dest: "{{ base_dir }}/lubelogger/compose.yml"
+
+- name: Ensure znc service with compose
+  community.docker.docker_compose_v2:
+    project_src: "{{ base_dir }}/lubelogger"
+    docker_cli: /usr/local/bin/docker
+
