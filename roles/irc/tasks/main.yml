@@ -1,7 +1,7 @@
 ---
 - name: Ensure znc compose file
-  ansible.builtin.copy:
-    src: compose.yml
+  ansible.builtin.template:
+    src: compose.j2
     dest: "{{ base_dir }}/irc/compose.yml"
 
 - name: Ensure znc service with compose
