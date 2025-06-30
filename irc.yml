@@ -1,5 +1,5 @@
 ---
 - name: configure and deploy the irc bouncer
-  hosts: mini
+  hosts: homelab
   roles:
     - irc
