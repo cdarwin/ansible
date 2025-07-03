@@ -3,6 +3,7 @@
   ansible.builtin.template:
     src: compose.j2
     dest: "{{ base_dir }}/irc/compose.yml"
+    mode: "0644"
 
 - name: Ensure znc service with compose
   community.docker.docker_compose_v2:
