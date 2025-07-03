@@ -1,0 +1,11 @@
+---
+- name: Ensure traefik compose file
+  ansible.builtin.copy:
+    src: compose.yml
+    dest: "{{ base_dir }}/proxy/compose.yml"
+    mode: "0644"
+
+- name: Ensure proxy service with compose
+  community.docker.docker_compose_v2:
+    project_src: "{{ base_dir }}/proxy"
+    docker_cli: /usr/local/bin/docker

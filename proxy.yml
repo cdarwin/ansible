@@ -1,0 +1,5 @@
+---
+- name: Configure and deploy the proxy application
+  hosts: homelab
+  roles:
+    - proxy
