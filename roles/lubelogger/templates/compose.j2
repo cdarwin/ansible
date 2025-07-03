@@ -24,3 +24,8 @@ services:
       - keys:/root/.aspnet/DataProtection-Keys
     ports:
       - 8181:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lubelogger.rule=Host(`garage.benpen.home`)"
+      - "traefik.http.routers.lubelogger.entrypoints=web"
+      - "traefik.http.services.lubelogger.loadbalancer.server.url=http://{{ansible_facts['default_ipv4']['address']}}:8181"
